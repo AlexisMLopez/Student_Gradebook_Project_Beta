@@ -1,0 +1,2 @@
+Selena Vallejo [English, Science, Programming, Math] [100.0, 80.0, 60.0, 50.0] [A, B, D, F]
+Final grade for semester: C
