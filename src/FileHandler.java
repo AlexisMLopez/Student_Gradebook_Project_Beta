@@ -26,7 +26,7 @@ public class FileHandler {
          * double individual course weighted averages.
          * @param insertLetterGrade this takes input from the hashmap gradeLetterHashmap. It takes the values from gradeLetterHashmap which are
          * the char letterGrade variables derived from the individual course weighted averages.
-         * @param insertFinalSemesterGrade this takes input from char semesterLetterGrade.
+         *
          */
 
         String[] courseArray = insertCourse.toArray(new String[insertCourse.size()]);

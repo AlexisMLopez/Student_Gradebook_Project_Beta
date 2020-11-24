@@ -1,6 +1,3 @@
-import java.util.Collection;
-import java.util.Map;
-
 public class Assignments {
 
     //ASSIGNMENTS string array
