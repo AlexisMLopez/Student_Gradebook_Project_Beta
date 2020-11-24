@@ -19,6 +19,8 @@ public class Courses extends Assignments {
     protected Map<String, Character> gradeLetterHashmap = new HashMap<>();
 
     public int classSelected;
+
+    //variable that gets a String from the COURSES array assigned to it by the courseSelector() method.
     public String classLock;
     boolean userCoursePrompt = true;
 
@@ -31,6 +33,7 @@ public class Courses extends Assignments {
     protected void putCourse (String insertCourse, double[][] insert2dArray) {
         /**
          * This method takes in a course and a 2d array and unifies them within a hashmap called dataStructure.
+         *
          * @param insertCourse For the course, String classLock is chosen.
          * @param insert2dArray For the 2dArray, double[][] gradeLock is chosen.
          */
@@ -41,6 +44,7 @@ public class Courses extends Assignments {
     protected void putAverage (){
         /**
          * This void method unifies a course with an individual weighted average within a hashmap called averageHashmap.
+         *
          * @variable classLock: This represents the course chosen by the user using the courseSelector() method.
          * @variable weightedIndividualCourse: This represents the weighted average we get via the getCourseAverage method.
          */
@@ -53,7 +57,8 @@ public class Courses extends Assignments {
         /**
          * This void method unifies a course with a char grade letter derived from the previously stated weighted average.
          * These are both put into a hashmap called gradeLetterHashmap.
-         * @variable classLock: same course as described as the above comment.
+         *
+         * @variable classLock:  This represents the course chosen by the user using the courseSelector() method.
          * @return checkGrade(weightedIndividualCourseAverage): This is a method call that returns a char; The grade letter
          * associated with a weighted average of one chosen course.
          */
@@ -167,6 +172,10 @@ public class Courses extends Assignments {
             /**
              * This method checks the contents of the reportCard.txt to see what grade the student got for their classes.
              * It gives the student information on whether on not they passed their courses.
+             *
+             * @param insertCourse: This takes in the key set from the dataStructure hashmap which is the COURSES String array.
+             * We then convert this set<String> into an array.
+             * @variable courseArray: This array is then looped through, printing messages based on what course got what grade.
              */
 
             String[] courseArray = insertCourse.toArray(new String[insertCourse.size()]);

@@ -5,10 +5,10 @@ public class People extends Courses{
 
 
     //The students name is stored within this String variable.
-    String studentName;
+    protected String studentName;
 
     //This boolean takes user input in order to continue or end the while loop in the primaryLoop method on line 33.
-    boolean userGradePrompt = true;
+    protected boolean userGradePrompt = true;
 
     //default constructor
     People () {

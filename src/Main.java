@@ -7,7 +7,7 @@ public class Main {
         //to run the setStudentName method and the primaryLoop method.
         People user1 = new People();
 
-        //Sets the student's name.
+        //Method that sets the student's name.
         user1.setStudentName();
 
         //This method contains a loop that enacts all of the other methods.
