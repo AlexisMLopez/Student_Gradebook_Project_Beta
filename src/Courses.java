@@ -4,6 +4,9 @@ public class Courses extends Assignments {
 
     Scanner scan = new Scanner(System.in);
 
+    //This instance call allows for the Courses class to have access to the FileHandler class.
+    FileHandler fileH = new FileHandler();
+
     final public static String[] COURSES = {"Programming", "Math", "Science", "English"};
 
     //Hashmap that we use to store the course with its accompanied 2d array which contains all assignment category grades.
@@ -158,6 +161,33 @@ public class Courses extends Assignments {
                 System.out.println();
             }
             System.out.println();
+        }
+
+        protected void coursePassCheck (Set<String> insertCourse) {
+            /**
+             * This method checks the contents of the reportCard.txt to see what grade the student got for their classes.
+             * It gives the student information on whether on not they passed their courses.
+             */
+
+            String[] courseArray = insertCourse.toArray(new String[insertCourse.size()]);
+
+            System.out.println("\n");
+
+            for(int i = 0; i < insertCourse.size(); i++) {
+
+                if ((fileH.info.contains(courseArray[i].toLowerCase() + ": " + "a"))) {
+                    System.out.println("Congratulations, you passed! You got an A in: " + courseArray[i]);
+
+                } else if ((fileH.info.contains(courseArray[i].toLowerCase() + ": " + "b"))) {
+                    System.out.println("Well done, you passed! You got a B in: " + courseArray[i]);
+
+                } else if ((fileH.info.contains(courseArray[i].toLowerCase() + ": " + "c"))) {
+                    System.out.println("Good job, you passed. You got a C in: " + courseArray[i]);
+
+                } else {
+                    System.out.println("You received a D or lower. You did not pass: " + courseArray[i]);
+                }
+            }
         }
 
 

@@ -11,7 +11,7 @@ public class FileHandler {
 
 
     public void fileWriter(String insertName, Set<String> insertCourse, Collection<Double> insertWeight,
-                           Collection<Character> insertLetterGrade, char insertSemesterLetterGrade) throws IOException {
+                           Collection<Character> insertLetterGrade) throws IOException {
         /**
          * This method takes in a ton of info and writes it all to a file called reportCard.txt.
          * The method creates a file if it does not exist and then proceeds to write all of the inputted values into the file and closes the file.
@@ -29,14 +29,18 @@ public class FileHandler {
          * @param insertFinalSemesterGrade this takes input from char semesterLetterGrade.
          */
 
+        String[] courseArray = insertCourse.toArray(new String[insertCourse.size()]);
+        Character[] letterGradeArray = insertLetterGrade.toArray(new Character[insertCourse.size()]);
+
         File studentInfo = new File("src/reportCard.txt");
         if (!studentInfo.exists()) {
             studentInfo.createNewFile();
         }
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter(studentInfo, false));
-            writer.write(insertName + " " + insertCourse + " " + insertWeight + " " + insertLetterGrade + "\n"
-            + "Final grade for semester: " + insertSemesterLetterGrade + "\n");
+            writer.write(insertName + " " + insertCourse.toString() + " " + insertWeight + " " + insertLetterGrade + "\n"
+            + "\n" + courseArray[0] + ": " + letterGradeArray[0] + "\n" + courseArray[1] + ": " + letterGradeArray[1] + "\n"
+                    + courseArray[2] + ": " + letterGradeArray[2] + "\n" + courseArray[3]  +  ": " + letterGradeArray[3] + "\n");
             writer.flush();
             writer.close();
 

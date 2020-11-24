@@ -2,8 +2,7 @@ import java.io.IOException;
 
 public class People extends Courses{
 
-    //This instance call allows for the primaryLoop to have access to the FileHandler class.
-    FileHandler fileH = new FileHandler();
+
 
     //The students name is stored within this String variable.
     String studentName;
@@ -36,55 +35,52 @@ public class People extends Courses{
          * Further information of what goes on here is described within the following methods in the code.
          *
          * All within brackets is looped: {
-         * 1.) courseSelector: (LINE: 95)
+         * 1.) courseSelector: (LINE: 91)
          * Locks in desired course along with desired 2d array using the course selector method.
          * @variable courseLock: The course is assigned to this String variable.
          * @variable gradeLock: The grade table is assigned to this double[][] variable. (which is used to calculate weights and
          * to assign grade letters.)
          *
-         * 2.) enterEveryCourseGrade: (LINE: 98)
+         * 2.) enterEveryCourseGrade: (LINE: 94)
          * Allows the entering of all of the grades for a respective course depending on what assignment is entered.
          *
-         * 3.) putCourse: (LINE: 101)
+         * 3.) putCourse: (LINE: 97)
          * After the course, grade table, and grades are entered into the grade table, all of that information is placed
          * into a hashmap with the format <key: courses, value: grade table>.
          *
-         * 4.) printAllGrades: (LINE: 103)
+         * 4.) printAllGrades: (LINE: 99)
          * Prints all of the grades entered in order to check for errors.
          *
-         * 5.) getCourseAverage: (LINE: 106)
+         * 5.) getCourseAverage: (LINE: 102)
          * Gets the individual course weight using whatever 2d array is assigned to gradeLock, via
          * @variable int classSelected.
          *
-         * 6.) checkGrade: (LINE: 108)
+         * 6.) checkGrade: (LINE: 104)
          * method that is printed applies a letter grade to the previously calculated individual course weight.
          *
-         * 7.) putAverage: (LINE: 110)
+         * 7.) putAverage: (LINE: 106)
          * method unifies a course with an individual weighted average within a hashmap called averageHashmap.
          * this method takes gradeLock as an input. Within the method itself, gradeLock is the key and
          * @variable weightedIndividualCourse is put in as the value.
          *
-         * 8.) putGradeLetter: (LINE: 112)
+         * 8.) putGradeLetter: (LINE: 108)
          * method unifies a course with the a grade letter within a hashmap called gradeLetterHashmap.
          * the grade letter portion is based off of the previously calculated from the weightedIndividualCourseAverages.
          * Where the course is the key and the weightedIndividualCourseAverage is the value.
          *
-         * 9.) enterUserGradeFlag: (LINE: 114)
+         * 9.) enterUserGradeFlag: (LINE: 110)
          * is called in order to receive user input that can either end or continue the loop.
          * The while loop is ended when the user inputs "No", that specific input sets the variable userGradePrompt to be false.
          *
          * } end of loop userGradePrompt = false
          *
-         * 10.) (LINE: 120 && (LINE: 121)) Once we break out of the loop we get the total semester average and set a grade letter
-         * to that average.
+         * 10.) (LINE: 117) We then write the file using the fileWriter method with all of the input variables.
          *
-         * 11.) (LINE: 123) We then write the file using the fileWriter method with all of the input variables.
-         *
-         * 12.) (LINE: 126) && (LINE: 129) Furthermore we read the file we just wrote and print the info from the file
+         * 11.) (LINE: 120) && (LINE: 123) Furthermore we read the file we just wrote and print the info from the file
          * to the console in order to check if we read it correctly.
          *
-         * 13.) (LINE: 133) Finally, we have a simple if/else if/ else statement that reads the file and sees if it contains
-         * a specific phrase with a grade letter to see whether the student has passed the semester or not.
+         * 12.) (LINE: 125) Finally, we have the method coursePassCheck that reads the file and sees if it contains
+         * a specific phrase with a grade letter to see whether the student has passed their courses or not.
          *
          * END PROGRAM
          */
@@ -117,31 +113,16 @@ public class People extends Courses{
 
         }
 
-        getSemesterAverage(averageHashmap.values());
-        semesterLetterGrade = checkGrade(weightedSemesterAverage);
 
         fileH.fileWriter(studentName, dataStructure.keySet(), averageHashmap.values(),
-                gradeLetterHashmap.values(), semesterLetterGrade);
+                gradeLetterHashmap.values());
 
         fileH.fileReader();
 
-        //File reader check
+        //File reader checks reportCard.txt contents and prints to console
         System.out.println(fileH.info);
 
-        System.out.println("\n");
-
-        if (fileH.info.contains("final grade for semester: a")) {
-            System.out.println("Congratulations on passing the Semester! You got an A and did fantastic.");
-        }
-        else if (fileH.info.contains("final grade for semester: b")) {
-            System.out.println("Well done on passing the Semester! You got a B and did well.");
-        }
-        else if (fileH.info.contains("final grade for semester: c")) {
-            System.out.println("Good job, you passed the Semester. You got a C and did an average job.");
-        }
-        else {
-            System.out.println("Better luck next year, you did not pass.");
-        }
+        coursePassCheck(dataStructure.keySet());
 
     }
 

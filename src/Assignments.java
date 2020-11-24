@@ -3,6 +3,7 @@ import java.util.Map;
 
 public class Assignments {
 
+    //ASSIGNMENTS string array
     final String[] ASSIGNMENTS = {"Quiz", "Exam", "Homework", "Project"};
 
     //Our grade tables that are associated with specific courses
@@ -18,10 +19,7 @@ public class Assignments {
     protected double weightedIndividualCourseAverage;
     //The letter grade associated with weightedIndividualCourseAverage.
     protected char letterGrade;
-    //The weighted average of the averages of all of the individual courses.
-    protected double weightedSemesterAverage;
-    //the letter grade associated with weightedSemesterAverage.
-    protected char semesterLetterGrade;
+
 
     //Weighted percentages for Assignments
     final protected double quizW = 0.20;
@@ -53,27 +51,6 @@ public class Assignments {
 
     }
 
-    protected void getSemesterAverage(Collection<Double> insertCollection) {
-        /**
-         * This method calculates the weighted average of all of the weights previously recorded by the program with a for loop
-         * and through division after the loop.
-         * The for loop compares it's iterator with the size of the collection, so its value  dependant on the user's input.
-         * This makes it so the user can enter any amount of weighted averages in that can be calculated into one final semester average.
-         *
-         * @param insertCollection this takes input from our averageHashmap, specifically the values which are all double weights.
-         * @variable addedSemesterAverage: is a variable that adds all of the calculated individual course averages together.
-         * @variable weightedSemesterAverage: is the final calculated semester average. This is calculated by taking the addedSemesterAverage
-         * value and dividing it by the size of the collection that was inserted into the method.
-         */
-
-        Double[] array = insertCollection.toArray(new Double[insertCollection.size()]);
-        double addedSemesterAverage = 0;
-
-        for (int i = 0; i < insertCollection.size(); i++) {
-            addedSemesterAverage += array[i];
-        }
-        weightedSemesterAverage = addedSemesterAverage / insertCollection.size();
-    }
 
 
 

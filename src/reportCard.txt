@@ -1,2 +1,6 @@
-Guy [English, Programming, Science, Math] [60.0, 105.66666666666667, 80.0, 66.5] [D, A, B, D]
-Final grade for semester: C
+Alexis Lopez [English, Programming, Science, Math] [90.0, 0.0, 80.0, 70.0] [A, F, B, C]
+
+English: A
+Programming: F
+Science: B
+Math: C
