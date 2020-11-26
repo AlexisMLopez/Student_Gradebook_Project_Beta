@@ -106,20 +106,23 @@ public class People extends Courses{
     System.out.println("Are you finished entering grades? (Y/N)");
     String input = scan.next().toLowerCase().substring(0,1);
 
-    switch (input) {
-        case "y":
-            this.userGradePrompt = false;
-            System.out.println("We're done entering grades, moving on!" + "\n");
-            break;
-        case "n":
-            this.userGradePrompt = true;
-            System.out.println("Alright, let's keep adding grades. Adding grades where" + "\n" +
-                    "you have previously added, will overwrite their previously assigned values." + "\n");
-            break;
-        default:
-            this.userGradePrompt = true;
-            System.out.println("Not a valid selection, please enter either (Y/N)."  + "\n" +
-                    "sending you back to the start of the loop." + "\n"  + "(your input was still accepted)" + "\n");
+        switch (input) {
+            case "y": {
+                this.userGradePrompt = false;
+                System.out.println("We're done entering grades, moving on!" + "\n");
+                break;
+            }
+            case "n": {
+                this.userGradePrompt = true;
+                System.out.println("Alright, let's keep adding grades. Adding grades where" + "\n" +
+                        "you have previously added, will overwrite their previously assigned values." + "\n");
+                break;
+            }
+            default: {
+                this.userGradePrompt = true;
+                System.out.println("Not a valid selection, please enter either (Y/N)." + "\n" +
+                        "sending you back to the start of the loop." + "\n" + "(your input was still accepted)" + "\n");
+            }
         }
     }
 }

@@ -1,8 +1,5 @@
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class FileHandler {
 
@@ -41,7 +38,7 @@ public class FileHandler {
             writer.flush();
             writer.close();
         } catch (IOException writerEX) {
-            System.out.println("Cannot write to file, permission issue: " + writerEX.getStackTrace());
+            System.out.println("Cannot write to file, permission issue: " + Arrays.toString(writerEX.getStackTrace()));
         }
     }
 
@@ -56,15 +53,15 @@ public class FileHandler {
             FileReader reader = new FileReader("src/reportCard.txt");
             BufferedReader bReader = new BufferedReader(reader);
 
-            String line = "";
+            String line;
             while ((line = bReader.readLine()) != null) {
                 info.add(line.toLowerCase());
             }
             reader.close();
         } catch (FileNotFoundException ex) {
-            System.out.println("File does not exist: " + ex.getStackTrace());
+            System.out.println("File does not exist: " + Arrays.toString(ex.getStackTrace()));
         } catch (IOException e) {
-            System.out.println("Problem reading file: " + e.getStackTrace());
+            System.out.println("Problem reading file: " + Arrays.toString(e.getStackTrace()));
         }
     }
 }

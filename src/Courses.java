@@ -11,9 +11,9 @@ public class Courses extends Assignments {
     boolean userCoursePrompt = true;
 
     final public static String[] COURSES = {"Programming", "Math", "Science", "English"};
-    protected Map<String, double[][]> dataStructure = new HashMap(); //Hashmap for storing a course with a grade table.
-    protected Map<String, Double> averageHashmap = new HashMap<>(); //Hashmap for storing a course with a weighted grade.
-    protected Map<String, Character> gradeLetterHashmap = new HashMap<>(); //Hashmap for storing a course with a grade letter.
+    protected HashMap<String, double[][]> dataStructure = new HashMap(); //Hashmap for storing a course with a grade table.
+    protected HashMap<String, Double> averageHashmap = new HashMap<>(); //Hashmap for storing a course with a weighted grade.
+    protected HashMap<String, Character> gradeLetterHashmap = new HashMap<>(); //Hashmap for storing a course with a grade letter.
 
     Courses () {
         super();
