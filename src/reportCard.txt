@@ -1,3 +1,5 @@
-Ronny Fray [Programming, Science] [117.33333333333333, 91.66666666666667] [A, A]
-Programming: A
+Alexis Lopez [English, Programming, Science, Math] [70.0, 66.5, 93.33333333333333, 80.0] [C, D, A, B]
+English: C
+Programming: D
 Science: A
+Math: B
