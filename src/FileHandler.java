@@ -6,9 +6,7 @@ import java.util.Set;
 
 public class FileHandler {
 
-    //This arraylist is used in the fileReader() method.
-    public List<String> info = new ArrayList<>();
-
+    public List<String> info = new ArrayList<>();   //This arraylist is used in the fileReader() method.
 
     public void fileWriter(String insertName, Set<String> insertCourse, Collection<Double> insertWeight,
                            Collection<Character> insertLetterGrade) throws IOException {
@@ -27,7 +25,7 @@ public class FileHandler {
          * @param insertLetterGrade this takes input from the hashmap gradeLetterHashmap. It takes the values from gradeLetterHashmap which are
          * the char letterGrade variables derived from the individual course weighted averages.
          *
-         */
+         **/
 
         String[] courseArray = insertCourse.toArray(new String[insertCourse.size()]);
         Character[] letterGradeArray = insertLetterGrade.toArray(new Character[insertCourse.size()]);
@@ -35,22 +33,18 @@ public class FileHandler {
         File studentInfo = new File("src/reportCard.txt");
         if (!studentInfo.exists()) {
             studentInfo.createNewFile();
-        }
-        try {
+        } try {
             BufferedWriter writer = new BufferedWriter(new FileWriter(studentInfo, false));
-            writer.write(insertName + " " + insertCourse.toString() + " " + insertWeight + " " + insertLetterGrade + "\n"
-            + "\n" + courseArray[0] + ": " + letterGradeArray[0] + "\n" + courseArray[1] + ": " + letterGradeArray[1] + "\n"
-                    + courseArray[2] + ": " + letterGradeArray[2] + "\n" + courseArray[3]  +  ": " + letterGradeArray[3] + "\n");
+            writer.write(insertName + " " + insertCourse.toString() + " " + insertWeight + " " + insertLetterGrade + "\n");
+            for(int i = 0; i < insertCourse.size(); i++) {
+                writer.write(courseArray[i] + ": " + letterGradeArray[i] + "\n");
+            }
             writer.flush();
             writer.close();
-
         } catch (IOException writerEX) {
             System.out.println("Cannot write to file, permission issue: " + writerEX.getStackTrace());
         }
-
     }
-
-
 
     public void fileReader() {
         /**
@@ -58,7 +52,7 @@ public class FileHandler {
          * If the method fails to read the file, it will handle the FileNotFoundException and the IOException with an error
          * followed by getting the stack trace.
          * This method is later printed to check if the correct values were created in the file in the fileWriter() method properly.
-         */
+         **/
 
         try {
             FileReader reader = new FileReader("src/reportCard.txt");
@@ -75,7 +69,4 @@ public class FileHandler {
             System.out.println("Problem reading file: " + e.getStackTrace());
         }
     }
-
-
-
 }

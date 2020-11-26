@@ -12,7 +12,5 @@ public class Main {
 
         //This method contains a loop that enacts all of the other methods.
         user1.primaryLoop();
-
-
     }
 }
