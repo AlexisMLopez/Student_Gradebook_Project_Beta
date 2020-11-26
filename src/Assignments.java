@@ -17,16 +17,15 @@ public class Assignments {
     //This 2d array becomes whatever grade table we assign it to via the courseSelector() method in the Courses class.
     protected double[][] gradeLock = new double[4][3];
 
+    /**
+     * Gets the average of the values in a specific individual course.
+     *
+     * @param insert2dArray  For the 2dArray, double[][] gradeLock is chosen.
+     * @variable weightedIndividualCourseAverage: this double value is calculated by adapting the weighted value formula
+     * to all of the elements within the 2d array. All the Assignments are multiplied to their respective weighted percentages
+     * and then added together. Finally, they are divided by the sum of the weights.
+     */
     protected void getCourseAverage(double[][] insert2dArray) {
-        /**
-         * Gets the average of the values in a specific individual course.
-         *
-         * @param insert2dArray  For the 2dArray, double[][] gradeLock is chosen.
-         * @variable weightedIndividualCourseAverage: this double value is calculated by adapting the weighted value formula
-         * to all of the elements within the 2d array. All the Assignments are multiplied to their respective weighted percentages
-         * and then added together. Finally, they are divided by the sum of the weights.
-         **/
-
         weightedIndividualCourseAverage = (((insert2dArray[0][0] * quizW) + (insert2dArray[0][1] * quizW) +
                 (insert2dArray[0][2] * quizW) + (insert2dArray[1][0] * examW) + (insert2dArray[1][1] * examW) +
                 (insert2dArray[1][2] * examW) + (insert2dArray[2][0] * homeworkW) + (insert2dArray[2][1] * homeworkW) +
@@ -36,16 +35,15 @@ public class Assignments {
         System.out.println("Final weight: " + weightedIndividualCourseAverage);
     }
 
+    /**
+     * This method takes an individual course average and assigns and returns a char value to it based on
+     * what letter grade corresponds to it.
+     *
+     * @param insertWeight the individual course average is taken as input.
+     * @variable letterGrade: this is a char class variable that is set to grade letter that comes from the individual course weight.
+     * this letter grade is inputted into the gradeLetterHashmap
+     */
     protected char checkGrade(double insertWeight) {
-        /**
-         * This method takes an individual course average and assigns and returns a char value to it based on
-         * what letter grade corresponds to it.
-         *
-         * @param insertWeight the individual course average is taken as input.
-         * @variable letterGrade: this is a char class variable that is set to grade letter that comes from the individual course weight.
-         * this letter grade is inputted into the gradeLetterHashmap
-         **/
-
         if (insertWeight >= 90) {
             this.letterGrade = 'A';
             return 'A';
