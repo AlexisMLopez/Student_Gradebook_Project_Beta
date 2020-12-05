@@ -31,7 +31,7 @@ public class FileHandler {
             studentInfo.createNewFile();
         } try {
             BufferedWriter writer = new BufferedWriter(new FileWriter(studentInfo, false));
-            writer.write(insertName + " " + insertCourse.toString() + " " + insertWeight + " " + insertLetterGrade + "\n");
+            writer.write(insertName + " " + insertCourse.toString() + " " + insertWeight + "\n");
             for(int i = 0; i < insertCourse.size(); i++) {
                 writer.write(courseArray[i] + ": " + letterGradeArray[i] + "\n");
             }

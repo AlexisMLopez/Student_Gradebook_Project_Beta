@@ -14,7 +14,7 @@ public class People extends Courses{
     protected void setStudentName () {
         System.out.println("Welcome to the GradeBook program, what is your name? (First, Last)");
         this.studentName = scan.nextLine();
-        System.out.println("Thank you, " + this.studentName + " let's enter some grades.");
+        System.out.println("Thank you, " + this.studentName + "." + " What would you like to do?");
     }
 
     /**
@@ -22,51 +22,51 @@ public class People extends Courses{
      * Further information of what goes on here is described within the following methods in the code.
      *
      * All within brackets is looped: {
-     * 1.) courseSelector: (LINE: 77)
+     * 1.) courseSelector:
      * Locks in the desired course along with the desired 2d array using the course selector method.
      * @variable courseLock: The course is assigned to this String variable.
      * @variable gradeLock: The grade table is assigned to this double[][] variable. (which is used to calculate weights and
      * to assign grade letters.)
      *
-     * 2.) enterEveryCourseGrade: (LINE: 78)
+     * 2.) enterEveryCourseGrade:
      * Allows the entering of all of the grades for a respective course depending on what assignment is entered.
      *
-     * 3.) putCourse: (LINE: 79)
+     * 3.) putCourse:
      * After the course, grade table, and grades are entered into the grade table, all of that information is placed
      * into a hashmap with the format <key: courses, value: grade table>.
      *
-     * 4.) printAllGrades: (LINE: 80)
+     * 4.) printAllGrades:
      * Prints all of the grades entered in order to check for errors.
      *
-     * 5.) getCourseAverage: (LINE: 82)
+     * 5.) getCourseAverage:
      * Gets the individual course weight using whatever 2d array is assigned to gradeLock, via
      * @variable int classSelected.
      *
-     * 6.) checkGrade: (LINE: 83)
+     * 6.) checkGrade:
      * method that is printed applies a letter grade to the previously calculated individual course weight.
      *
-     * 7.) putAverage: (LINE: 85)
+     * 7.) putAverage:
      * method unifies a course with an individual weighted average within a hashmap called averageHashmap.
      * this method takes gradeLock as an input. Within the method itself, gradeLock is the key and
      * @variable weightedIndividualCourse is put in as the value.
      *
-     * 8.) putGradeLetter: (LINE: 86)
+     * 8.) putGradeLetter:
      * method unifies a course with the a grade letter within a hashmap called gradeLetterHashmap.
      * the grade letter portion is based off of the previously calculated from the weightedIndividualCourseAverages.
      * Where the course is the key and the weightedIndividualCourseAverage is the value.
      *
-     * 9.) enterUserGradeFlag: (LINE: 88)
+     * 9.) enterUserGradeFlag:
      * is called in order to receive user input that can either end or continue the loop.
      * The while loop is ended when the user inputs "No", that specific input sets the variable userGradePrompt to be false.
      *
      * } end of loop userGradePrompt = false
      *
-     * 10.) (LINE: 90) We then write the file using the fileWriter method with all of the input variables.
+     * 10.) We then write the file using the fileWriter method with all of the input variables.
      *
-     * 11.) (LINE: 91) && (LINE: 92) Furthermore we read the file we just wrote and print the info from the file
+     * 11.) Furthermore we read the file we just wrote and print the info from the file
      * to the console in order to check if we read it correctly.
      *
-     * 12.) (LINE: 94) Finally, we have the method coursePassCheck that reads the file and sees if it contains
+     * 12.) Finally, we have the method coursePassCheck that reads the file and sees if it contains
      * a specific phrase with a grade letter to see whether the student has passed their courses or not.
      *
      * END PROGRAM

@@ -10,6 +10,9 @@ public class Main {
         //Method that sets the student's name.
         user1.setStudentName();
 
+        //This method takes in a scanned user input (1 for entering new grades, 2 for viewing old grades).
+        user1.viewOldOrNewGrades();
+
         //This method contains a loop that enacts all of the other methods.
         user1.primaryLoop();
     }

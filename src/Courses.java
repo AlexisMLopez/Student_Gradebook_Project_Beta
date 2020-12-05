@@ -69,8 +69,8 @@ public class Courses extends Assignments {
     protected void courseSelector() {
         userCoursePrompt = true;
         while (userCoursePrompt) {
-            System.out.println("Which class would you like to select?: (1-4)");
-            System.out.println(Arrays.deepToString(COURSES));
+            System.out.println("Which class would you like to select?: " + "\n" +
+            "[1 = " + COURSES[0] + "] " + "[2 = " + COURSES[1] + "] " + "[3 = " + COURSES[2] + "] " + "[4 = " + COURSES[3] + "] ");
             this.classSelected = scan.nextInt();
 
             if (this.classSelected == 1) {
@@ -153,6 +153,40 @@ public class Courses extends Assignments {
                     System.out.println("Good job, you passed. You got a C in: " + courseArray[i]);
                 } else {
                     System.out.println("You received a D or lower. You did not pass: " + courseArray[i]);
+                }
+            }
+        }
+
+    /**
+     *  This method takes in scanned user input and enters it into a while loop.
+     *  @variable gradesPrompt: a flag that can be set true or false, that influences the properties of the while loop.
+     *  @variable choice: is the variable that stores the user input.
+     *  if choice = 1: The loop will break out into the rest of the code, to enter new grades.
+     *  if choice = 2: The loop will break out and the method will run the fileReader method in order to
+     *  read the contents of the reportCard.txt file. Furthermore, code will also print out all the info in
+     *  the FileH.info Arraylist that contains all the contents of reportCard.txt.
+     *  if choice = anything else: The loop continues, and brings the user back to the start of the method
+     *  viewOldOrNewGrades.
+     */
+    protected void viewOldOrNewGrades() {
+            boolean gradesPrompt = true;
+            while (gradesPrompt) {
+                System.out.println("[Enter new grades] or [View old grades]? (1 = new, 2 = old)" +
+                        " (Checking old grades will exit the program.)");
+                int choice = scan.nextInt();
+                if (choice == 1) {
+                    gradesPrompt = false;
+                    System.out.println("Let's enter some grades!");
+                } else if (choice == 2) {
+                    gradesPrompt = false;
+                    System.out.println("[Old grades in the system]: " +
+                            "(If no grades were input before, this will display nothing.)");
+                    fileH.fileReader();
+                    System.out.println(fileH.info);
+                    System.exit(0);
+                } else {
+                    gradesPrompt = true;
+                    System.out.println("Please make a valid selection, either 1 or 2.");
                 }
             }
         }
