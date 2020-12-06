@@ -1,5 +1,10 @@
 import java.util.*;
 
+/* The Courses Class is a Sub Class to the Assignments class. This class has the Scanner class within it for user input.
+The Courses Class has within it all of the Hashmap data structures that group together the user's information.
+It groups this information by taking in both the classLock and gradeLock variables (from Assignments CLass).
+This Class handles all of the Course related functions as well as all of the methods that display or interact with the
+user's grades. Basically, it handles all of the logistic functions for user interaction. */
 public class Courses extends Assignments {
 
     Scanner scan = new Scanner(System.in);

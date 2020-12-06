@@ -1,6 +1,9 @@
 import java.io.*;
 import java.util.*;
 
+/* The FileHandler class handles all of the file methods. As stated, it allows for both reading and writing of a file.
+Based on the user's information (name, course, weight), gets written into the file reportCard.txt.
+Afterwards, the file reader method reads the file and prints to the console in order to check old grades. */
 public class FileHandler {
 
     public List<String> info = new ArrayList<>();   //This arraylist is used in the fileReader() method.

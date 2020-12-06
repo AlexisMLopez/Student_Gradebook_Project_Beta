@@ -1,5 +1,11 @@
 import java.io.IOException;
 
+/* The People class stores the student's name, and contains the primary loop which loops through several vital methods.
+It allows for course selection, entering course grades, printing grades, and getting course averages.
+It also allows for the file methods to both write and read all the student's information to and from a text file.
+At the end of the primary loop, it outputs a text prompt based on the information in the file reportCard.txt.
+That text output states whether or not a student passed a selected course. This class has access to the information
+within the Courses Class.*/
 public class People extends Courses{
 
     protected String studentName; //The students name is stored within this String variable.

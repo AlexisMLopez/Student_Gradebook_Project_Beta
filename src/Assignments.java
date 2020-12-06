@@ -1,3 +1,6 @@
+/* The Assignments Class contains all of the calculation methods as well as all the 2 dimensional arrays and weights.
+These two dimensional arrays contain all the grades for each respective class (up to 4 classes at once can be stored).
+The grades entered in the Courses Class get weighted here. Then, a letter grade is assigned to each weighted grade. */
 public class Assignments {
 
     //Class variables

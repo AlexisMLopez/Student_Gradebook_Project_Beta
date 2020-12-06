@@ -1,5 +1,7 @@
 import java.io.IOException;
 
+//The Main Class.
+/* The Main class calls from all of the major methods in their respective classes. */
 public class Main {
     public static void main (String[] args) throws IOException {
 
