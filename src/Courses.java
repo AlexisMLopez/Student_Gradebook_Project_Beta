@@ -6,9 +6,9 @@ public class Courses extends Assignments {
     FileHandler fileH = new FileHandler(); //Allows for the Courses class to have access to the FileHandler class.
 
     //Class variables.
-    public int classSelected;
+    private int classSelected;
     public String classLock; //variable that gets String from the COURSES array assigned to it by the courseSelector() method.
-    boolean userCoursePrompt = true;
+    protected boolean userCoursePrompt = true;
 
     final public static String[] COURSES = {"Programming", "Math", "Science", "English"};
     protected HashMap<String, double[][]> dataStructure = new HashMap(); //Hashmap for storing a course with a grade table.
@@ -182,7 +182,7 @@ public class Courses extends Assignments {
                     System.out.println("[Old grades in the system]: " +
                             "(If no grades were input before, this will display nothing.)");
                     fileH.fileReader();
-                    System.out.println(fileH.info);
+                    System.out.print(fileH.info);
                     System.exit(0);
                 } else {
                     gradesPrompt = true;

@@ -89,7 +89,7 @@ public class People extends Courses{
         }
         fileH.fileWriter(studentName, dataStructure.keySet(), averageHashmap.values(), gradeLetterHashmap.values());
         fileH.fileReader();
-        System.out.println(fileH.info);          //File reader checks reportCard.txt contents and prints to console
+        System.out.print(fileH.info);          //File reader checks reportCard.txt contents and prints to console
 
         coursePassCheck(dataStructure.keySet()); //This method checks if the student passed the course.
     }

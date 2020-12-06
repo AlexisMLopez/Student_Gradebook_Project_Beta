@@ -54,6 +54,7 @@ public class FileHandler {
             BufferedReader bReader = new BufferedReader(reader);
 
             String line;
+            System.out.println();
             while ((line = bReader.readLine()) != null) {
                 info.add(line.toLowerCase());
             }

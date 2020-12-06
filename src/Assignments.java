@@ -3,10 +3,10 @@ public class Assignments {
     //Class variables
     protected double weightedIndividualCourseAverage; //The weighted average for an individual course.
     protected char letterGrade;  //The letter grade associated with weightedIndividualCourseAverage.
-    final protected double quizW = 0.20;
-    final protected double examW = 0.30;
-    final protected double homeworkW = 0.25;
-    final protected double projectW = 0.25;
+    final private double quizW = 0.20;
+    final private double examW = 0.30;
+    final private double homeworkW = 0.25;
+    final private double projectW = 0.25;
 
     final String[] ASSIGNMENTS = {"Quiz", "Exam", "Homework", "Project"}; //ASSIGNMENTS string array
     //Our grade tables that are associated with specific courses

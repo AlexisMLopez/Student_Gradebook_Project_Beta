@@ -1,2 +1,5 @@
-Alexis Lopez [Programming] [99.16666666666667]
+Alexis Lopez [English, Programming, Science, Math] [54.5, 95.14999999999999, 80.0, 90.0]
+English: F
 Programming: A
+Science: B
+Math: A
